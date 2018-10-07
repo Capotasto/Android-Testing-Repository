@@ -5,6 +5,8 @@ import android.net.ConnectivityManager
 import android.os.Bundle
 import android.support.v4.app.Fragment
 import android.support.v7.app.AppCompatActivity
+import com.funckyhacker.androidtesting.broadCastReceiver.NetworkCheckFragment
+import com.funckyhacker.androidtesting.broadCastReceiver.NetworkReceiver
 import timber.log.Timber
 
 class MainActivity : AppCompatActivity() {

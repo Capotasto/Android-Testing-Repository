@@ -1,10 +1,9 @@
-package com.funckyhacker.androidtesting
+package com.funckyhacker.androidtesting.broadCastReceiver
 
 import android.content.BroadcastReceiver
 import android.content.Context
 import android.content.Intent
 import android.support.v4.content.LocalBroadcastManager
-import com.funckyhacker.androidtesting.util.NetworkUtils
 import timber.log.Timber
 
 class NetworkReceiver : BroadcastReceiver() {

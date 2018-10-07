@@ -1,4 +1,4 @@
-package com.funckyhacker.androidtesting
+package com.funckyhacker.androidtesting.broadCastReceiver
 
 import android.content.BroadcastReceiver
 import android.content.Context
@@ -8,7 +8,6 @@ import android.os.Bundle
 import android.support.v4.app.Fragment
 import android.support.v4.content.LocalBroadcastManager
 import android.widget.Toast
-import com.funckyhacker.androidtesting.util.NetworkUtils
 import timber.log.Timber
 
 class NetworkCheckFragment : Fragment() {

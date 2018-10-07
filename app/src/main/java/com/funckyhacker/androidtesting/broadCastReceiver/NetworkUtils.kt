@@ -1,4 +1,4 @@
-package com.funckyhacker.androidtesting.util
+package com.funckyhacker.androidtesting.broadCastReceiver
 
 import android.content.Context
 import android.net.ConnectivityManager
