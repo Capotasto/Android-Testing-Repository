@@ -1,3 +1,7 @@
 <resources>
     <string name="app_name">AndroidTesting</string>
+    <string name="broadcast_receiver">BroadcastReceiver1</string>
+    <string name="content_provider">ContentProvider</string>
+    <string name="date_of_photo">撮影日時: %1$s</string>
+
 </resources>

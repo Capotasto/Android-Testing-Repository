@@ -1,45 +1,26 @@
 package com.funckyhacker.androidtesting
 
-import android.content.IntentFilter
-import android.net.ConnectivityManager
 import android.os.Bundle
-import android.support.v4.app.Fragment
 import android.support.v7.app.AppCompatActivity
-import com.funckyhacker.androidtesting.broadCastReceiver.NetworkCheckFragment
-import com.funckyhacker.androidtesting.broadCastReceiver.NetworkReceiver
-import timber.log.Timber
+import android.widget.Button
+import com.funckyhacker.androidtesting.broadCastReceiver.BroadcastReceiverActivity
+import com.funckyhacker.androidtesting.contentProvider.ContentProviderActivity
 
 class MainActivity : AppCompatActivity() {
-
-    private var fragment: Fragment? = null
-
-    private val intentFilter: IntentFilter by lazy {
-        IntentFilter(NetworkCheckFragment.ACTION_CHECK_INTERNET)
-    }
-
-    private val receiver = NetworkReceiver()
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
 
-        fragment = supportFragmentManager.findFragmentByTag(NetworkCheckFragment.TAG)
-        if (fragment == null) {
-            fragment = NetworkCheckFragment.createInstance()
-            supportFragmentManager.beginTransaction()
-                    .add(fragment, NetworkCheckFragment.TAG)
-                    .commit()
+        val broadcast1 = findViewById<Button>(R.id.broadcast1_button)
+        broadcast1.setOnClickListener {
+            startActivity(BroadcastReceiverActivity.createIntent(this))
+        }
+
+        val contentReceiver = findViewById<Button>(R.id.content_receiver)
+        contentReceiver.setOnClickListener {
+            startActivity(ContentProviderActivity.createIntent(this))
         }
     }
 
-    override fun onResume() {
-        super.onResume()
-        Timber.d("capo onResume")
-        registerReceiver(receiver, IntentFilter(ConnectivityManager.CONNECTIVITY_ACTION))
-    }
-
-    override fun onPause() {
-        super.onPause()
-        unregisterReceiver(receiver)
-    }
 }
