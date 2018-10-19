@@ -78,7 +78,7 @@ class ContentProviderActivity : AppCompatActivity() {
                 contentImage.setImageURI(imageUri)
 
             }
-            cursor.close()
+             cursor.close()
         } catch (e: SecurityException) {
             Toast.makeText(this, "Nedd Storage Permission!", Toast.LENGTH_SHORT).show()
         }

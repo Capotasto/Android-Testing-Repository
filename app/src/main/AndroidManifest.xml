@@ -36,6 +36,8 @@
         </activity>
         <activity android:name=".contentProvider.ContentProviderActivity">
         </activity>
+        <activity android:name=".contentProvider.WordsOfToday1Activity">
+        </activity>
     </application>
 
 </manifest>
