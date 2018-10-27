@@ -6,6 +6,7 @@ import android.widget.Button
 import com.funckyhacker.androidtesting.broadCastReceiver.BroadcastReceiverActivity
 import com.funckyhacker.androidtesting.contentProvider.ContentProviderActivity
 import com.funckyhacker.androidtesting.contentProvider.WordsOfToday1Activity
+import com.funckyhacker.androidtesting.textViewTest.TextViewTestActivity
 
 class MainActivity : AppCompatActivity() {
 
@@ -26,6 +27,11 @@ class MainActivity : AppCompatActivity() {
         val wordOfToday = findViewById<Button>(R.id.word_of_today2)
         wordOfToday.setOnClickListener {
             startActivity(WordsOfToday1Activity.createIntent(this))
+        }
+
+        val textViewTest = findViewById<Button>(R.id.text_view_test)
+        textViewTest.setOnClickListener {
+            startActivity(TextViewTestActivity.createIntent(this))
         }
     }
 

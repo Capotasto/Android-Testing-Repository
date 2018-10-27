@@ -38,6 +38,8 @@
         </activity>
         <activity android:name=".contentProvider.WordsOfToday1Activity">
         </activity>
+        <activity android:name=".textViewTest.TextViewTestActivity">
+        </activity>
     </application>
 
 </manifest>

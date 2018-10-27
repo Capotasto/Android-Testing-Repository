@@ -12,22 +12,22 @@ abstract class CursorRecyclerViewAdapter<T : RecyclerView.ViewHolder> : Recycler
 
     private val mDataSetObservable = DataSetObservable()
     protected var mAutoRequery: Boolean = false
-    protected lateinit var cursor: Cursor
+    protected var cursor: Cursor? = null
     protected var mDataValid: Boolean = false
     protected lateinit var mContext: Context
     protected var mRowIDColumn: Int = 0
     private var mChangeObserver: ChangeObserver? = null
     protected var mDataSetObserver: DataSetObserver? = MyDataSetObserver()
 
-    constructor(context: Context, cursor: Cursor) : super() {
+    constructor(context: Context, cursor: Cursor?) : super() {
         init(context, cursor, true)
     }
 
-    constructor(context: Context, cursor: Cursor, autoRequery: Boolean) : super() {
+    constructor(context: Context, cursor: Cursor?, autoRequery: Boolean) : super() {
         init(context, cursor, autoRequery)
     }
 
-    protected fun init(context: Context, c: Cursor, autoRequery: Boolean) {
+    protected fun init(context: Context, c: Cursor?, autoRequery: Boolean) {
         val cursorPresent = c != null
         mAutoRequery = autoRequery
         cursor = c
@@ -108,7 +108,7 @@ abstract class CursorRecyclerViewAdapter<T : RecyclerView.ViewHolder> : Recycler
         }
     }
 
-    abstract fun bindView(viewHolder: T, context: Context, cursor: Cursor)
+    abstract fun bindView(viewHolder: T, context: Context, cursor: Cursor?)
 
     private inner class ChangeObserver : ContentObserver(Handler()) {
 
